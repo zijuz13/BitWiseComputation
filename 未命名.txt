@@ -1,0 +1,53 @@
+package com.huajun123.algorithms;
+
+public class Character {
+    public static void main(String[] args) {
+        String pre="ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+//        String latter="DHLPTXnAEIMQUY]BFJNRVZ^CGK";
+//        System.out.println(latter.length());
+        System.out.println(pre.length());
+        StringBuilder builder=new StringBuilder();
+        for(int i=0;i<pre.length();i++){
+            int c = pre.charAt(i);
+//            int c1 = latter.charAt(i);
+            //获得一个字节的最后五位
+            int temp=c&31;
+            //左移两位
+            int temp1=temp<<2;
+            //获得最后五位
+            int fuck=31&temp1;
+            //获得溢出的
+            int temp2=(temp1&96)>>5;
+            int temp3=temp2|fuck;
+            //小写96大写64
+            int fnl=temp3|64;
+            char fnl1=(char)fnl;
+//            String s = Integer.toBinaryString(c);
+//            String s1 = Integer.toBinaryString(c1);
+//            String s2=Integer.toBinaryString(temp);
+//            String s4 = Integer.toBinaryString(fuck);
+//            String s3 = Integer.toBinaryString(temp2);
+//            String s5 = Integer.toBinaryString(temp3);
+//            String s6 = Integer.toBinaryString(fnl);
+//            while(s.length()!=8){
+//                s="0"+s;
+//            }
+//            while(s1.length()!=8){
+//                s1="0"+s1;
+//            }
+//            while(s6.length()!=8){
+//                s6="0"+s6;
+//            }
+//            System.out.println(pre.charAt(i)+"字符对应二进制："+s);
+//            System.out.println(latter.charAt(i)+"字符对应二进制："+s1);
+//            System.out.println("与以后的:"+s2);
+//            System.out.println("overflow1:"+s4);
+//            System.out.println("overflow:"+s3);
+//            System.out.println("拼好"+s6);
+            builder.append(fnl1);
+//            System.out.println("adsasdas结果"+fnl1);
+//            System.out.println("-----------");
+        }
+        System.out.println(builder.toString());
+    }
+}
